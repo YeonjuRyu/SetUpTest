@@ -7,27 +7,50 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "storybook": "start-storybook -p 7007",
+    "prettier": "npx prettier --config .prettierrc.js --write \"src/**/*.{ts,js,tsx,jsx}\""
   },
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^1.0.0",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react-native": "^5.3.18",
+    "@storybook/react-native-server": "^5.3.18",
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.62.0",
     "@types/react-test-renderer": "16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.5.1",
+    "husky": "^4.2.3",
     "jest": "^24.9.0",
+    "lint-staged": "^10.1.1",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.11.0",
     "prettier": "^2.0.2",
+    "react-dom": "16.11.0",
+    "react-test-renderer": "16.11.0",
     "typescript": "^3.8.3"
   },
   "jest": {
