@@ -9,14 +9,21 @@
  */
 
 import React from 'react';
-import {SafeAreaView, Text, StatusBar} from 'react-native';
+import { SafeAreaView, Text, StatusBar } from 'react-native';
 
-const App = (): any => {
+type PropTypes = {
+  title?: string;
+};
+
+const App = (props) => {
+  const { title } = props;
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <Text style={{color: 'blue', fontSize: 40}}>{'hi'}</Text>
+        <Text style={{ color: 'blue', fontSize: 40 }}>
+          {title === undefined ? 'hi there' : title}
+        </Text>
       </SafeAreaView>
     </>
   );

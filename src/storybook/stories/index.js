@@ -5,9 +5,12 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import Button from './Button';
-import CenterView from './CenterView';
-import Welcome from './Welcome';
+import { ApolloProvider } from '@apollo/react-hooks';
+import client from '../../../client';
+
+import Button from '@stories/stories/Button';
+import CenterView from '@stories/stories/CenterView';
+import Welcome from '@stories/stories/Welcome';
 
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
@@ -25,3 +28,9 @@ storiesOf('Button', module)
       <Text>😀 😎 👍 💯</Text>
     </Button>
   ));
+
+storiesOf('screens', module).add('default', () => (
+  <ApolloProvider client={client}>
+    <Route />
+  </ApolloProvider>
+));
