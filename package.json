@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 7007",
-    "prettier": "npx prettier --config .prettierrc.js --write \"src/**/*.{ts,js,tsx,jsx}\""
+    "prettier": "npx prettier --config .prettierrc.js --write \"src/**/*.{ts,js,tsx,jsx}\"",
+    "build": "webpack"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
@@ -22,6 +23,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "graphql": "^14.6.0",
     "react": "16.11.0",
+    "react-docgen-typescript-loader": "^3.7.2",
     "react-native": "0.62.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.7.1",
@@ -64,7 +66,8 @@
     "prettier": "^2.0.2",
     "react-dom": "16.11.0",
     "react-test-renderer": "16.11.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack-cli": "^3.3.11"
   },
   "jest": {
     "preset": "react-native",

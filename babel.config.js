@@ -18,7 +18,7 @@ module.exports = {
           '@util': './src/util',
           '@type': './src/type',
           '@api': './src/api',
-          '@stories': './src/storybook',
+          '@stories': './src/stories',
         },
       },
     ],
