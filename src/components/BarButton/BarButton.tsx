@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import { TouchableHighlight } from 'react-native';
 
 const BarButton = (props) => {
-  const { onPress, disabled, children } = props;
+  const { style, onPress, disabled, children } = props;
   return (
     <TouchableHighlight
       onPress={onPress}
-      style={{
-        backgroundColor: disabled ? 'red' : 'blue',
-        height: 50,
-        width: 100,
-        borderRadius: 4,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      style={[
+        {
+          backgroundColor: disabled ? 'gray' : 'green',
+          alignItems: 'center',
+          justifyContent: 'center',
+          alignSelf: 'center',
+          borderRadius: 10,
+        },
+        style,
+      ]}>
       {children}
     </TouchableHighlight>
   );

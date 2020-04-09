@@ -5,7 +5,15 @@ module.exports = {
       'module-resolver',
       {
         root: ['./src'],
-        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        extensions: [
+          '.ios.js',
+          '.android.js',
+          '.stories.ts',
+          '.js',
+          '.ts',
+          '.tsx',
+          '.json',
+        ],
         alias: {
           '@constant': './src/constant',
           '@styles': './src/constant/styles.ts',
@@ -18,7 +26,6 @@ module.exports = {
           '@util': './src/util',
           '@type': './src/type',
           '@api': './src/api',
-          '@stories': './src/stories',
         },
       },
     ],

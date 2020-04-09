@@ -29,8 +29,7 @@
       "@images": ["src/assets/images/*"],
       "@styles": ["src/constant/styles.ts"],
       "@constant": ["src/constant/index.ts"],
-      "@components": ["src/components/index.ts"],
-      "@stories/*": ["src/storybook/*"]
+      "@components/*": ["src/components/components.ts"]
     }
   },
   "exclude": [
