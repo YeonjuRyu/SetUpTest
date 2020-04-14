@@ -4,15 +4,11 @@ import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
-import Input from './Input';
+import { Input } from '@components';
 
-const inputStory = storiesOf('Input', module)
+const inputStory = storiesOf('atoms', module)
   .addDecorator(withKnobs)
-  .add('able', () => (
+  .add('인풋', () => (
     <Input disabled={boolean('Disabled', false)} content="blue" />
-  ))
-  .add('disable', () => (
-    <Input disabled={boolean('Disabled', true)} content="red" />
   ));
-
 export default inputStory;

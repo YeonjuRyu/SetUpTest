@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 const BarButton = (props) => {
-  const { style, onPress, disabled, children } = props;
+  const { style, onPress, disabled, title } = props;
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       onPress={onPress}
+      activeOpacity={disabled ? 1.0 : 0.7}
       style={[
         {
-          backgroundColor: disabled ? 'gray' : 'green',
+          backgroundColor: disabled ? 'gray' : 'rgb(44, 160, 165)',
           alignItems: 'center',
           justifyContent: 'center',
-          alignSelf: 'center',
-          borderRadius: 10,
+          height: 50,
+          borderRadius: 8,
+          flexDirection: 'row',
         },
         style,
       ]}>
-      {children}
-    </TouchableHighlight>
+      <Text>{title}</Text>
+    </TouchableOpacity>
   );
 };
 

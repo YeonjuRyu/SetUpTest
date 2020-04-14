@@ -24,12 +24,13 @@
       "@hooks/*": ["src/hooks/*"],
       "@context/*": ["src/context/*"],
       "@screens/*": ["src/screens/*"],
-      "@routes": ["src/routes/RootNavi.tsx"],
+      "@routes": ["src/routes/*"],
       "@routes/types": ["src/Routes/types.ts"],
       "@images": ["src/assets/images/*"],
-      "@styles": ["src/constant/styles.ts"],
-      "@constant": ["src/constant/index.ts"],
-      "@components/*": ["src/components/components.ts"]
+      "@styles": ["src/common/Styles.ts"],
+      "@constant": ["src/common/Constant.ts"],
+      "@common": ["src/common/index.ts"],
+      "@components": ["src/components/index.ts"]
     }
   },
   "exclude": [

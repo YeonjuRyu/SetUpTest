@@ -15,8 +15,9 @@ module.exports = {
           '.json',
         ],
         alias: {
-          '@constant': './src/constant',
-          '@styles': './src/constant/styles.ts',
+          '@constant': './src/common/Constant.ts',
+          '@styles': './src/common/Styles.ts',
+          '@common': './src/common',
           '@components': './src/components',
           '@routes': './src/routes',
           '@images': './src/assets/images',

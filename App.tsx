@@ -10,6 +10,7 @@
 
 import React from 'react';
 import { SafeAreaView, Text, StatusBar } from 'react-native';
+import { RNCamera } from 'react-native-camera';
 
 type PropTypes = {
   title?: string;
@@ -24,6 +25,7 @@ const App = (props) => {
         <Text style={{ color: 'blue', fontSize: 40 }}>
           {title === undefined ? 'hi there' : title}
         </Text>
+        <RNCamera />
       </SafeAreaView>
     </>
   );
