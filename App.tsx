@@ -1,33 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import { SafeAreaView, Text, StatusBar } from 'react-native';
-import { RNCamera } from 'react-native-camera';
+import {
+  SafeAreaView,
+  Text,
+  StatusBar,
+  Alert,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import apolloClient from './client';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { BottomTabNavi } from '@routes';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 type PropTypes = {
   title?: string;
 };
 
+const RootStack = createStackNavigator();
+
 const App = (props) => {
   const { title } = props;
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text style={{ color: 'blue', fontSize: 40 }}>
-          {title === undefined ? 'hi there' : title}
-        </Text>
-        <RNCamera />
-      </SafeAreaView>
-    </>
+    <ApolloProvider client={apolloClient}>
+      <NavigationContainer>
+        <RootStack.Navigator>
+          <RootStack.Screen name={'DrawerNavi'} component={BottomTabNavi} />
+        </RootStack.Navigator>
+      </NavigationContainer>
+    </ApolloProvider>
   );
 };
 

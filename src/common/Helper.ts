@@ -3,9 +3,6 @@ import values from 'lodash/values';
 import numeral from 'numeral';
 import moment from 'moment';
 import { PLATFORM } from './Constant';
-// import { URL, URLSearchParams } from 'whatwg-url';
-import { Buffer } from 'buffer';
-global.Buffer = Buffer;
 
 type Client = {
   id?: number;
@@ -21,10 +18,6 @@ type PriceListItem = {
 
 const isQueryIncluded = (url: string) => {
   return url.match(/query=({.*})/i)?.length > 0;
-  // Lookbehind not working
-  // return new RegExp('(?<=query=){.*}').test(url);
-  // let parsedURL = new URLSearchParams(url.split('/?')[1]);
-  // return parsedURL.has('query');
 };
 
 const getQueryVariables = (url: string) => {
@@ -33,14 +26,14 @@ const getQueryVariables = (url: string) => {
 };
 
 const isUnique = (list = [], target = {}, key = 'no') => {
-  return list.every(item => item[key] !== target[key]);
+  return list.every((item) => item[key] !== target[key]);
 };
 
 const createImmutableList = (list = [], target = {}, key = 'no') => {
   if (isUnique(list, target)) {
     return [...list, target];
   } else {
-    return list.filter(item => item[key] !== target[key]);
+    return list.filter((item) => item[key] !== target[key]);
   }
 };
 
@@ -266,7 +259,7 @@ const flattenInvoiceData = ({
   }
 };
 
-const getContactInfoByPlatform = contacts => {
+const getContactInfoByPlatform = (contacts) => {
   let collection = [];
 
   if (PLATFORM.IS_ANDROID && contacts.length) {
@@ -479,11 +472,11 @@ const categorizeHistoryListByDate = (flattenHistoryList: any[]) => {
   }
 
   return categorized
-    .filter(history => history)
-    .map(history => {
+    .filter((history) => history)
+    .map((history) => {
       return {
         ...history,
-        sortByType: function(type) {
+        sortByType: function (type) {
           return this.data.filter(({ historyType }) => historyType !== type);
         },
       };

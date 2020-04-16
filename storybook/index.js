@@ -2,6 +2,8 @@ import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 import './rn-addons';
 
+require('react-native').unstable_enableLogBox();
+
 // import stories
 configure(() => require('./stories/index.stories'), module);
 
