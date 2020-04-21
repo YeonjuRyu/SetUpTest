@@ -9,6 +9,6 @@ import { Input } from '@components';
 const inputStory = storiesOf('atoms', module)
   .addDecorator(withKnobs)
   .add('인풋', () => (
-    <Input disabled={boolean('Disabled', false)} content="blue" />
+    <Input editable={boolean('Editable', true)} content="blue" />
   ));
 export default inputStory;

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { SafeAreaView, Text } from 'react-native';
+import { Input } from '@components';
 
 const Setting = () => {
   return (
     <SafeAreaView>
-      <Text>세팅</Text>
+      <Input />
     </SafeAreaView>
   );
 };

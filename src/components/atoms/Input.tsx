@@ -1,28 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 const Input = (props) => {
-  const { disabled, content } = props;
+  const { editable } = props;
+  let content = '';
   return (
-    <Text
-      style={{
-        color: disabled ? 'red' : 'blue',
-        fontSize: 20,
-      }}>
-      {content}
-    </Text>
+    <TouchableOpacity
+      style={{ borderWidth: 1, borderRadius: 3, height: 50, width: '100%' }}>
+      <TextInput onChangeText={() => {}} editable={editable} />
+    </TouchableOpacity>
   );
 };
 
 Input.defaultProps = {
   content: '',
-  disabled: false,
+  editable: true,
 };
 
 Input.propTypes = {
   content: PropTypes.string,
-  disabled: PropTypes.bool,
+  editable: PropTypes.bool,
 };
 
 export default Input;
